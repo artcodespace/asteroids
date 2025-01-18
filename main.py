@@ -36,6 +36,12 @@ def main():
             d.draw(screen)
 
         pygame.display.flip()
+
+        for a in asteroids:
+            if player.is_colliding(a):
+                print("Game over!")
+                exit()
+
         delta = clock.tick(60)
         dt = delta / 1000
 
